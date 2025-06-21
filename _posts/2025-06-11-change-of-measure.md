@@ -130,7 +130,7 @@ $$C = \mathbb{E_P}(1_{S_T > K}) = \int_0^{100} 1_{z > K}dz$$
 {% endkatexmm %} 
 Finding the value of this definite integral is cumbersome, so let's attack the problem with Monte-Carlo. The strategy is to simulate   {% katexmm %} $n$ {% endkatexmm %} random variables   {% katexmm %} $U_i\sim U(0,100)$ {% endkatexmm %} and then form the estimate 
 {% katexmm %}
-$$C \approx \frac{1}{n}\sum_{k=1}^{n}1_{U_k > K} \tag{5}$$
+$$\hat{C}_n = \frac{1}{n}\sum_{k=1}^{n}1_{U_k > K} \tag{5}$$
 {% endkatexmm %}
 By the law of large numbers, we know that that the right hand side approachs the *true* price given by the integral as we take {% katexmm %} $n\to\infty$ {% endkatexmm %}. 
 
@@ -140,4 +140,4 @@ Suppose we're considering an option that's struck at {% katexmm %} $K=90$ {% end
 
 [^1]: I've oversimplified things quite a bit here. Measures are *special* in that they ascribe volumes / sizes *consistently* amongst sets, namely that the size of the empty set should be 0, {% katexmm %} $A\cap B = \emptyset \implies \mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B) $ {% endkatexmm %} and {% katexmm %} $A\subseteq B \implies \mathbb{P}(A)\leq\mathbb{P}(B)$ {% endkatexmm %}. As it turns out, not every possible {% katexmm %} $A\subseteq \Omega$ {% endkatexmm %} results in these properties holding, so one needs to restrict the space of considerable sets to a collection {% katexmm %} $\mathcal{F}$ {% endkatexmm %} called a *sigma algebra*.
 
-[^2]: Another slight ommision is a technical condition that the measures used in the Radon-Nikodym theorem must be *sigma finite*. Fortuntately, all probability measures are {% katexmm %} $\mathbb{P}$ {% endkatexmm %} satisfy this condition.
+[^2]: Another slight ommision is a technical condition that the measures used in the Radon-Nikodym theorem must be *sigma finite*. Fortuntately, all probability measures {% katexmm %} $\mathbb{P}$ {% endkatexmm %} satisfy this condition so we can skip over this when working in the probability context.
