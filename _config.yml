@@ -20,7 +20,7 @@
 
 highlighter: rouge
 email: sc.sean.conlon@gmail.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "personal-blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jekyll
 
